@@ -1,14 +1,14 @@
 <pre><?php
 
-use Guzzle\Http\Client;
+use GuzzleHttp\Client;
 use MusicBrainz\Filters\RecordingFilter;
-use MusicBrainz\HttpAdapters\GuzzleHttpAdapter;
+use MusicBrainz\HttpAdapters\GuzzleFiveAdapter;
 use MusicBrainz\MusicBrainz;
 
 require dirname(__DIR__) . '/vendor/autoload.php';
 
 //Create new MusicBrainz object
-$brainz = new MusicBrainz(new GuzzleHttpAdapter(new Client()));
+$brainz = new MusicBrainz(new GuzzleFiveAdapter(new Client()));
 $brainz->setUserAgent('ApplicationName', '0.2', 'http://example.com');
 
 // set defaults
