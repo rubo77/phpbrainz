@@ -293,11 +293,11 @@ class MusicBrainz
     {
         $this->adapter = $adapter;
 
-        if (NULL != $user) {
+        if (NULL !== $user) {
             $this->setUser($user);
         }
 
-        if (NULL != $password) {
+        if (NULL !== $password) {
             $this->setPassword($password);
         }
     }
@@ -644,7 +644,6 @@ class MusicBrainz
         array $releaseType = array(),
         array $releaseStatus = array()
     ) {
-        //$this->validateFilter(array($entity), self::$validIncludes);
         $this->validateFilter($releaseStatus, self::$validReleaseStatuses);
         $this->validateFilter($releaseType, self::$validReleaseTypes);
 
