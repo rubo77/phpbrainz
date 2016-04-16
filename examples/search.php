@@ -24,7 +24,8 @@ $args = array(
 try {
     $releaseGroups = $brainz->search(new ReleaseGroupFilter($args));
     var_dump($releaseGroups);
-} catch (Exception $e) {
+}
+catch (Exception $e) {
     print $e->getMessage();
 }
 print "\n\n";
@@ -41,7 +42,8 @@ $args = array(
 try {
     $artists = $brainz->search(new ArtistFilter($args));
     print_r($artists);
-} catch (Exception $e) {
+}
+catch (Exception $e) {
     print $e->getMessage();
 }
 print "\n\n";
@@ -59,7 +61,8 @@ $args = array(
 try {
     $recordings = $brainz->search(new RecordingFilter($args));
     print_r($recordings);
-} catch (Exception $e) {
+}
+catch (Exception $e) {
     print $e->getMessage();
 }
 print "\n\n";
@@ -75,6 +78,7 @@ $args = array(
 try {
     $labels = $brainz->search(new LabelFilter($args));
     print_r($labels);
-} catch (Exception $e) {
+}
+catch (Exception $e) {
     print $e->getMessage();
 }

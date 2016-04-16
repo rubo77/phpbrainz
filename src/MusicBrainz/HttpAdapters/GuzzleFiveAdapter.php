@@ -17,11 +17,11 @@ class GuzzleFiveAdapter extends AbstractHttpAdapter
      * @param ClientInterface $client
      * @param null $endpoint
      */
-    public function __construct(ClientInterface $client, $endpoint = null)
+    public function __construct(ClientInterface $client, $endpoint = NULL)
     {
         $this->client = $client;
 
-        if(filter_var($endpoint, FILTER_VALIDATE_URL)) {
+        if (filter_var($endpoint, FILTER_VALIDATE_URL)) {
             $this->endpoint = $endpoint;
         }
     }
@@ -38,9 +38,9 @@ class GuzzleFiveAdapter extends AbstractHttpAdapter
      * @throws Exception
      * @return array
      */
-    public function call($path, array $params = array(), array $options = array(), $isAuthRequired = false, $returnArray = false)
+    public function call($path, array $params = array(), array $options = array(), $isAuthRequired = FALSE, $returnArray = FALSE)
     {
-        if($options['user-agent'] == '') {
+        if ($options['user-agent'] == '') {
             throw new Exception('You must set a valid User Agent before accessing the MusicBrainz API');
         }
 
@@ -53,7 +53,7 @@ class GuzzleFiveAdapter extends AbstractHttpAdapter
         ];
 
         if ($isAuthRequired) {
-            if ($options['user'] != null && $options['password'] != null) {
+            if ($options['user'] != NULL && $options['password'] != NULL) {
                 $requestOptions['auth'] = [
                     'username' => $options['user'],
                     'password' => $options['password'],
