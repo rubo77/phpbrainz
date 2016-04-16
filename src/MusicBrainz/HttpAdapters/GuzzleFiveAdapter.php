@@ -17,7 +17,7 @@ class GuzzleFiveAdapter extends AbstractHttpAdapter
      * @param ClientInterface $client
      * @param null $endpoint
      */
-    public function __client(ClientInterface $client, $endpoint = null)
+    public function __construct(ClientInterface $client, $endpoint = null)
     {
         $this->client = $client;
 
@@ -48,7 +48,8 @@ class GuzzleFiveAdapter extends AbstractHttpAdapter
             'headers'        => [
                 'Accept'     => 'application/json',
                 'User-Agent' => $options['user-agent']
-            ]
+            ],
+            'query' => $params
         ];
 
         if ($isAuthRequired) {
@@ -63,13 +64,11 @@ class GuzzleFiveAdapter extends AbstractHttpAdapter
             }
         }
 
-        $request = $this->client->createRequest('GET', $path . '{?data*}', $requestOptions);
+        $request = $this->client->createRequest('GET', $this->endpoint . '/' . $path, $requestOptions);
 
         // musicbrainz throttle
         sleep(1);
-        
-        dump($this->client->send($request));
 
-        return $request->send()->json();
+        return $this->client->send($request)->json();
     }
 }
