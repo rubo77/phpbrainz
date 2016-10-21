@@ -3,7 +3,7 @@
     "type": "library",
     "description": "A PHP library for accessing the MusicBrainz API",
     "keywords": ["musicbrainz", "library", "php", "api"],
-    "homepage": "https://github.com/powered-by-moe/musicbrainz",
+    "homepage": "https://github.com/rubo77/phpbrainz",
     "license": "MIT",
     "authors": [
         {
