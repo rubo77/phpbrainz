@@ -5,7 +5,7 @@
 
 This PHP library that allows you to easily access the MusicBrainz Web Service V2 API. Visit the [MusicBrainz development page](http://musicbrainz.org/doc/Development) for more information.
 
-This project is a fork of https://github.com/mikealmond/MusicBrainz which in turn is a fork of https://github.com/chrisdawson/MusicBrainz and takes some inspiration from the [Python bindings](https://github.com/alastair/python-musicbrainz-ngs)
+This project is a fork of https://github.com/powered-by-moe/MusicBrainz/ which takes some inspiration from the [Python bindings](https://github.com/alastair/python-musicbrainz-ngs)
 
 ## Usage Example
 
